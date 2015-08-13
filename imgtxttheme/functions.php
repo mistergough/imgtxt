@@ -1,4 +1,4 @@
-<?php show_admin_bar( false ); ?>
+<?php show_admin_bar( true ); ?>
 <?php
 if ( function_exists('register_sidebar') ) {
 
@@ -77,34 +77,34 @@ add_theme_support( 'post-thumbnails' );
 <?php
 function widget_first_last_classes($params) {
  
-        global $my_widget_num; // Global a counter array
-        $this_id = $params[0]['id']; // Get the id for the current sidebar we're processing
-        $arr_registered_widgets = wp_get_sidebars_widgets(); // Get an array of ALL registered widgets 
+        global $my_widget_num;
+        $this_id = $params[0]['id'];
+        $arr_registered_widgets = wp_get_sidebars_widgets(); 
  
-        if(!$my_widget_num) {// If the counter array doesn't exist, create it
+        if(!$my_widget_num) {
                 $my_widget_num = array();
         }
  
-        if(!isset($arr_registered_widgets[$this_id]) || !is_array($arr_registered_widgets[$this_id])) { // Check if the current sidebar has no widgets
-                return $params; // No widgets in this sidebar... bail early.
+        if(!isset($arr_registered_widgets[$this_id]) || !is_array($arr_registered_widgets[$this_id])) {
+                return $params;
         }
  
-        if(isset($my_widget_num[$this_id])) { // See if the counter array has an entry for this sidebar
+        if(isset($my_widget_num[$this_id])) {
                 $my_widget_num[$this_id] ++;
-        } else { // If not, create it starting with 1
+        } else {
                 $my_widget_num[$this_id] = 1;
         }
  
-        $class = 'class="widgets-count-' . count($arr_registered_widgets[$this_id]) . ' '; // Add widget count class for additional styling options
-        $class .= 'widget-' . $my_widget_num[$this_id] . ' '; // Add a widget number class for additional styling options
+        $class = 'class="widgets-count-' . count($arr_registered_widgets[$this_id]) . ' ';
+        $class .= 'widget-' . $my_widget_num[$this_id] . ' ';
        
-        if($my_widget_num[$this_id] == 1) { // If this is the first widget
+        if($my_widget_num[$this_id] == 1) {
                 $class .= 'widget-first ';
-        } elseif($my_widget_num[$this_id] == count($arr_registered_widgets[$this_id])) { // If this is the last widget
+        } elseif($my_widget_num[$this_id] == count($arr_registered_widgets[$this_id])) {
                 $class .= 'widget-last ';
         }
  
-        $params[0]['before_widget'] = str_replace('class="', $class, $params[0]['before_widget']); // Insert our new classes into "before widget"
+        $params[0]['before_widget'] = str_replace('class="', $class, $params[0]['before_widget']);
  
         return $params;
  

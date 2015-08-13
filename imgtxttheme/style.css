@@ -1,21 +1,18 @@
 /*
-Theme Name: imagetext light
-Theme URI: http://imagetext.co.uk/sandbox/lighttheme
+Theme Name: imgtxt
+Theme URI: http://imagetext.co.uk/sandbox/
 Author: imagetext
 Author URI: http://imagetext.co.uk
-Description: A highly flexible theme for designers who can code.
+Description: Lightweight, prototyping theme for getting Wordpress sites up quickly. Provides reflowing layouts through widget placement, three header menu placements and a child theme for non-destructive development.
 Version: 1.0
-Tags: light, responsive
-Text Domain: imagetextlight
+Tags: lightweight, prototyping, widgetised, child.
+Text Domain: imgtxt
 */
 
 @import	'reset.css';
 
 * {
 	box-sizing: border-box;
-}
-body {
-	font-size: 62.5%;
 }
 #over-header, #header, #under-header, #over-content, #content, #under-content #footer, #posts, #main {
 	overflow: auto;
@@ -40,7 +37,7 @@ ul.menu li, ul.center-menu-left li, ul.center-menu-right li {
 	vertical-align: middle;
 }
 ul#over-content-widgets, ul#top-widgets, ul#bottom-widgets, ul#under-content-widgets {
-	float: left;
+	position: relative;
 	width: 100%;
 }
 .middle {

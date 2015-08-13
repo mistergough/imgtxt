@@ -1,4 +1,12 @@
-<?php get_header();?>
+<?php if(is_page( 47 ))
+{
+    get_header('story');
+}
+else
+{
+    get_header();
+}
+?>
 
 <?php if ( is_active_sidebar( 'Over Content' ) ) : ?>
 <div id="over-content">
@@ -26,15 +34,16 @@
 if (have_posts()) :
 while (have_posts()) :
 the_post(); ?>
-<li class="individual-post">
+<li class="individual-post"><div class="individual-post-content">
 <a class="image-link" href="<?php the_permalink(); ?>"><?php
 	if ( has_post_thumbnail() ) {
-		the_post_thumbnail('thumbnail');
+		the_post_thumbnail('medium');
 	}
 	?></a>
 <h2><a class="title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 <?php the_excerpt(); ?>
-</li>
+<p class="post-meta">Published on <?php the_time('jS F Y') ?> by <?php the_author(); ?> in <?php the_category(', ') ?>.</p>
+</div><br class="clear"></li>
 <?php
 endwhile;
 endif;

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+	<script src="//use.typekit.net/vlm3npu.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name='viewport' content='width=device-width' />
 <title><?php bloginfo('name'); ?></title>
