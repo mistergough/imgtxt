@@ -19,21 +19,16 @@
 </ul>
 <?php endif; ?>
 <div id="posts">
-<ul id="post-list">
 <?php
 if (have_posts()) :
 while (have_posts()) :
 the_post(); ?>
-<li class="individual-post"><div class="individual-post-content">
-<a class="image-link" href="<?php the_permalink(); ?>"><?php
-	if ( has_post_thumbnail() ) {
-		the_post_thumbnail('medium');
-	}
-	?></a>
-<h2><a class="title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-<?php the_excerpt(); ?>
+<div class="individual-post">
+<h2><?php the_title(); ?></h2>
+<?php the_content(); ?>
 <p class="post-meta">Published on <?php the_time('jS F Y') ?> by <?php the_author(); ?> in <?php the_category(', ') ?>.</p>
-</div><br class="clear"></li>
+<p><?php comment_form(); ?></p>
+</div>
 <?php
 endwhile;
 endif;
