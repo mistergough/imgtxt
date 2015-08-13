@@ -1,0 +1,108 @@
+/*
+Theme Name: imagetext light
+Theme URI: http://imagetext.co.uk/sandbox/lighttheme
+Author: imagetext
+Author URI: http://imagetext.co.uk
+Description: A highly flexible theme for designers who can code.
+Version: 1.0
+Tags: light, responsive
+Text Domain: imagetextlight
+*/
+
+@import	'reset.css';
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-size: 62.5%;
+}
+#over-header, #header, #under-header, #over-content, #content, #under-content #footer, #posts, #main {
+	overflow: auto;
+	position: relative;
+}
+.inner {
+	position: relative;
+	overflow: auto;
+}
+h1 {
+	display: inline-block;
+	width: 33.33%;
+	vertical-align: middle;
+}
+ul.center-menu-left, ul.center-menu-right {
+	display: inline-block;
+	vertical-align: middle;
+	width: 66.66%;
+}
+ul.menu li, ul.center-menu-left li, ul.center-menu-right li {
+	display: inline;
+	vertical-align: middle;
+}
+ul#over-content-widgets, ul#top-widgets, ul#bottom-widgets, ul#under-content-widgets {
+	float: left;
+	width: 100%;
+}
+.middle {
+	float: left;
+	width: 100%;
+}
+.left-middle {
+	float: right;
+	width: 66%;	
+}
+.middle-right {
+	float: left;
+	width: 66.66%;
+}
+.left-middle-right {
+	float: left;
+	width: 50%;
+}
+li.widgets-count-1 {
+	float: left;
+	width: 100%;
+}
+li.widgets-count-2 {
+	float: left;
+	width: 50%;
+}
+li.widgets-count-3 {
+	float: left;
+	width: 33.33%;
+}
+li.widgets-count-4 {
+	float: left;
+	width: 25%;
+}
+ul#sidebar-left li.widgets-count-2, ul#sidebar-left li.widgets-count-3, ul#sidebar-left li.widgets-count-4, ul#sidebar-right li.widgets-count-2, ul#sidebar-right li.widgets-count-3, ul#sidebar-right li.widgets-count-4, ul#sidebar-left-small li.widgets-count-2, ul#sidebar-left-small li.widgets-count-3, ul#sidebar-left-small li.widgets-count-4, ul#sidebar-right-small li.widgets-count-2, ul#sidebar-right-small li.widgets-count-3, ul#sidebar-right-small li.widgets-count-4 {
+	width: 100%;
+}
+#posts {
+	float: left;
+	width: 100%;
+}
+ul#bottom-widgets {
+	float: left;
+	width: 100%;
+}
+#sidebar-left {
+	float: left;
+	width: 33%;
+}
+#sidebar-left-small {
+	float: left;
+	width: 25%;
+}
+#sidebar-right {
+	float: right;
+	width: 33.33%;
+}
+#sidebar-right-small {
+	float: right;
+	width: 25%;
+}
+#footer-sidebar {
+	float: left;
+	width: 100%;
+}
